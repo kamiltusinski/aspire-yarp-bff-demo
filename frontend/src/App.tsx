@@ -25,9 +25,14 @@ interface Order {
 // ── API helpers ───────────────────────────────────────────────────────────
 
 async function fetchJson<T>(url: string): Promise<T | null> {
-  const res = await fetch(url)
-  if (!res.ok) return null
-  return res.json() as Promise<T>
+  try {
+    const res = await fetch(url)
+    if (!res.ok) return null
+    return res.json() as Promise<T>
+  } catch (err) {
+    console.warn(`fetchJson failed for ${url}:`, err)
+    return null
+  }
 }
 
 async function getCsrfToken(): Promise<string> {

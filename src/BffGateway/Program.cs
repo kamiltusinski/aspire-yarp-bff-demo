@@ -127,7 +127,7 @@ app.MapGet("/alive", () => Results.Ok(new { status = "alive" }));
 // GET /bff/user  – returns current user info (or 401)
 app.MapGet("/bff/user", (HttpContext ctx) =>
 {
-    if (!ctx.User.Identity?.IsAuthenticated ?? true)
+    if (ctx.User.Identity?.IsAuthenticated != true)
         return Results.Unauthorized();
 
     var name  = ctx.User.FindFirstValue(ClaimTypes.Name) ?? "unknown";
