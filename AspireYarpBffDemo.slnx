@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Aspire.AppHost/Aspire.AppHost.csproj" />
+    <Project Path="src/BffGateway/BffGateway.csproj" />
+    <Project Path="src/CatalogApi/CatalogApi.csproj" />
+    <Project Path="src/OrdersApi/OrdersApi.csproj" />
+  </Folder>
+</Solution>
