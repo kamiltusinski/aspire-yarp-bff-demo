@@ -416,3 +416,15 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Frontend build artifacts
+frontend/dist/
+frontend/node_modules/
+frontend/tsconfig.tsbuildinfo
+
+# BffGateway wwwroot (populated from frontend/dist during build)
+src/BffGateway/wwwroot/
+
+# Aspire dashboard / dev certificates
+.aspire/
+*.pfx
